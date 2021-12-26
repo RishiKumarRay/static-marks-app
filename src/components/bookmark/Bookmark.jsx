@@ -17,7 +17,14 @@ const Bookmark = ({ title, url, notes }) => {
       <div className="bookmark-row">
         {!!url && (
           <Link title={title} url={url}>
-            <Icon name="bookmark" position="left" />
+            <Icon
+              name="bookmark"
+              position="left"
+              // TODO: change to atomic class
+              style={{
+                color: "var(--color-text-default)",
+              }}
+            />
             {title}
           </Link>
         )}

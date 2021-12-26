@@ -3,12 +3,17 @@ import cn from "classnames";
 
 import "./Icon.scss";
 
-const Icon = ({ name, position }) => (
-  <div
-    className={cn("icon", `icon-${name}`, {
-      [`icon-${position}`]: position,
-    })}
-  />
-);
+const Icon = ({ name, position, style }) => {
+  return (
+    <svg
+      className={cn("icon", {
+        [`icon-${position}`]: position,
+      })}
+      style={style}
+    >
+      <use xlinkHref={`#icon-${name}`} />
+    </svg>
+  );
+};
 
 export default Icon;
